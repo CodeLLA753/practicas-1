@@ -1,0 +1,59 @@
+-- cobros db
+CREATE TABLE Escuela(
+   EscuelaId INT PRIMARY KEY AUNTO_INCREMENT,
+   NmobreDeLaEscuela VARCHAR (|00)NOT NULL,
+   Direccion VARCHAR(|00)NOT NULL
+);
+
+CREATE TABLE EstudianteTutor(
+   EstudianteTutorId INTEGER,
+   EstudianteId INTEGER,
+   TutorId INTEGER
+);
+
+CREATE TABLE Tutor(
+   TutorId INTEGER,
+   NombreCompleto VARCHAR(50),
+   FirmoCartaCompromiso BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE Estudiante(
+   ClienteId INTEGER,
+   Nombre VARCHAR(100)NOT NULL,
+   APaterno VARCHAR(50),
+   AMaterno VARCHAR (50),
+   FechaRegistro DATE,
+   Genero CHAR(1),
+   SuscripcionId INTEGER,
+   FechaNacimiento DATE,
+   Curp VARCHAR(50),
+   EscuelaId INTEGER
+);
+
+CREATE TABLE Suscripcion(
+   SuscripcionId INTEGER,
+   Nombre VARCHAR(50),
+   Costo DECIMAL,
+   Periodo VARCHAR(50)
+);
+
+CREATE TABLE Pago(
+   PagoId INTEGER,
+   FechaDeAplicacion DATE,
+   SuscripcionId INTEGER,
+   ClienteId INTEGER,
+   CantidadId DECIMAL
+);
+
+CREATE TABLE EstudianteGrado(
+   EstudianteGradoId INTEGER,
+   ClienteId INTEGER,
+   GradoId INTEGER,
+   FechaDeObtencion DATE
+);
+
+CREATE TABLE Grado(
+   GradoId INTEGER,
+   Nombre VARCHAR(50),
+   ColorDeCinta VARCHAR(50)
+);
